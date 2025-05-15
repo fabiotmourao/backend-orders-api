@@ -1,0 +1,32 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+pnpm-debug.log
+
+# TypeScript
+dist/
+*.tsbuildinfo
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs/
+*.log
+
+# VSCode
+.vscode/
+
+# Jest
+coverage/
+
+# Docker
+docker-compose.override.yml
+
+# Mac/Linux system files
+.DS_Store
+Thumbs.db
