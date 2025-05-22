@@ -6,6 +6,7 @@ import {
 import { OrderRepository } from '../repositories/order.repository';
 import { OrderItemRepository } from '../repositories/order-item.repository';
 import { CreateOrderDto } from '../dto/create-order.dto';
+import { UpdateProductDto } from '../../products/dto/update-product.dto';
 import { ProductsService } from '../../products/services/products.service';
 import { OrderItem } from '../entities/order-item.entity';
 
@@ -30,7 +31,8 @@ export class OrdersService {
 
       await this.productService.update(product.id, {
         quantidade_estoque: product.quantidade_estoque - item.quantidade,
-      });
+      } as UpdateProductDto);
+      
 
       total += product.preco * item.quantidade;
 
