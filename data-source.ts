@@ -10,7 +10,7 @@ export const AppDataSource = new DataSource({
   type: 'postgres',
   ...(isRender
     ? {
-        url: process.env.DATABASE_URL, // usado no Render
+        url: process.env.DATABASE_URL,
       }
     : {
         host: process.env.DATABASE_HOST,
@@ -21,5 +21,5 @@ export const AppDataSource = new DataSource({
       }),
   entities: [Product, Order, OrderItem],
   migrations: ['src/migrations/*.ts'],
-  synchronize: false, // ou true apenas para desenvolvimento
+  synchronize: false,
 });
