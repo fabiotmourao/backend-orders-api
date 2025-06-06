@@ -3,11 +3,12 @@
     "version": "0.0.1",
     "description": "API de pedidos e produtos",
     "scripts": {
-        "start": "node dist/main",
+        "start": "node dist/src/main",
         "start:dev": "nest start --watch",
         "build": "rimraf dist && tsc -p tsconfig.build.json",
         "test": "jest",
-        "test:watch": "jest --watch"
+        "test:watch": "jest --watch",
+        "typeorm:migrate": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:run -d data-source.ts"
     },
     "dependencies": {
         "@nestjs/common": "^10.4.0",

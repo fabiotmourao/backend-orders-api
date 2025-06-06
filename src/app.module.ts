@@ -11,14 +11,13 @@ import { AppService } from './app.service';
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
     TypeOrmModule.forRoot({
-      logging: true,
-      logger: 'advanced-console',
       type: 'postgres',
       host: process.env.DATABASE_HOST,
       port: parseInt(process.env.DATABASE_PORT, 10),
       username: process.env.DATABASE_USER,
       password: process.env.DATABASE_PASSWORD,
       database: process.env.DATABASE_NAME,
+      ssl: { rejectUnauthorized: false },
       autoLoadEntities: true,
       synchronize: false, // use false in production and generate migrations
     }),

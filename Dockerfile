@@ -9,6 +9,9 @@ WORKDIR /usr/src/app
 # Copia apenas os arquivos de dependências
 COPY package*.json ./
 
+# Copia o arquivo de variáveis de ambiente
+COPY .env ./
+
 # Instala dependências com resolução de conflitos
 RUN npm install --legacy-peer-deps
 
@@ -21,5 +24,5 @@ RUN npm run build
 # Expõe porta do NestJS
 EXPOSE 3000
 
-# Inicia a aplicação em modo dev
-CMD ["npm", "run", "start:dev"]
+# Inicia a aplicação em modo produção
+CMD ["npm", "run", "start"]
