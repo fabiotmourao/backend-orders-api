@@ -7,10 +7,6 @@ services:
     restart: always
     ports:
       - '3001:3000'
-    environment:
-      - DATABASE_URL=postgresql://banco_api_database_user:TPGtTZyDAeAkaerbPh1E97BLp16cxPdi@dpg-d11mhvodl3ps73cuq7dg-a.oregon-postgres.render.com/banco_api_database
-    # volumes:
-    #   - .:/usr/src/app
     command: npm run start
 
 volumes:
