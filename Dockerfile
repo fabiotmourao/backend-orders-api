@@ -9,9 +9,6 @@ WORKDIR /usr/src/app
 # Copia apenas os arquivos de dependências
 COPY package*.json ./
 
-# Copia o arquivo de variáveis de ambiente
-COPY .env ./
-
 # Instala dependências com resolução de conflitos
 RUN npm install --legacy-peer-deps
 
